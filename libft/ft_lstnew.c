@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 14:46:52 by mmusic            #+#    #+#             */
-/*   Updated: 2024/11/15 15:12:17 by matej            ###   ########.fr       */
+/*   Created: 2024/09/09 10:12:54 by mmusic            #+#    #+#             */
+/*   Updated: 2024/11/15 15:28:36 by matej            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+t_l	*ft_lstnew(void *content)
 {
-    t_l *list = NULL;
-    ft_lstadd_back(&list, ft_lstnew("A"));
-    ft_lstadd_back(&list, ft_lstnew("B"));
-    ft_lstprint(list);
-    sa(list);
-    ft_lstprint(list);
+	t_l	*new;
+
+	new = (t_l *)malloc(sizeof(t_l));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
 }

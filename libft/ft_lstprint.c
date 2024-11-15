@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 14:46:52 by mmusic            #+#    #+#             */
-/*   Updated: 2024/11/15 15:12:17 by matej            ###   ########.fr       */
+/*   Created: 2024/11/15 10:23:28 by matej             #+#    #+#             */
+/*   Updated: 2024/11/15 15:11:05 by matej            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+void ft_lstprint(t_l *lst)
 {
-    t_l *list = NULL;
-    ft_lstadd_back(&list, ft_lstnew("A"));
-    ft_lstadd_back(&list, ft_lstnew("B"));
-    ft_lstprint(list);
-    sa(list);
-    ft_lstprint(list);
+	int i = 1;
+	while(lst)
+	{
+		ft_putstr_fd("item ", 1);
+		ft_putnbr_fd(i, 1);
+		ft_putstr_fd("\t", 1);
+		ft_putendl_fd(lst->content, 1);
+		lst = lst->next;
+		i++;
+	}
 }

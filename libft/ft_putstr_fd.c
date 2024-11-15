@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mmusic <mmusic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 14:46:52 by mmusic            #+#    #+#             */
-/*   Updated: 2024/11/15 15:12:17 by matej            ###   ########.fr       */
+/*   Created: 2024/09/07 11:44:40 by matej             #+#    #+#             */
+/*   Updated: 2024/09/11 10:23:12 by mmusic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+void	ft_putstr_fd(char *s, int fd)
 {
-    t_l *list = NULL;
-    ft_lstadd_back(&list, ft_lstnew("A"));
-    ft_lstadd_back(&list, ft_lstnew("B"));
-    ft_lstprint(list);
-    sa(list);
-    ft_lstprint(list);
+	while (*s)
+	{
+		ft_putchar_fd(*s++, fd);
+	}
 }
+
+/* int main()
+{
+	ft_putstr_fd("Test", 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+} */

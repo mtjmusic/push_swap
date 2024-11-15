@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 14:46:52 by mmusic            #+#    #+#             */
-/*   Updated: 2024/11/15 15:12:17 by matej            ###   ########.fr       */
+/*   Created: 2024/09/09 13:04:28 by mmusic            #+#    #+#             */
+/*   Updated: 2024/11/15 10:10:58 by matej            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+void	ft_lstiter(t_l *lst, void (*f)(void *))
 {
-    t_l *list = NULL;
-    ft_lstadd_back(&list, ft_lstnew("A"));
-    ft_lstadd_back(&list, ft_lstnew("B"));
-    ft_lstprint(list);
-    sa(list);
-    ft_lstprint(list);
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mmusic <mmusic@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 14:46:52 by mmusic            #+#    #+#             */
-/*   Updated: 2024/11/15 15:12:17 by matej            ###   ########.fr       */
+/*   Created: 2024/09/04 11:44:55 by mmusic            #+#    #+#             */
+/*   Updated: 2024/09/10 18:34:35 by mmusic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int main()
+char	*ft_strdup(const char *s1)
 {
-    t_l *list = NULL;
-    ft_lstadd_back(&list, ft_lstnew("A"));
-    ft_lstadd_back(&list, ft_lstnew("B"));
-    ft_lstprint(list);
-    sa(list);
-    ft_lstprint(list);
+	char	*out;
+	size_t	len;
+
+	len = ft_strlen(s1);
+	out = (char *)malloc(sizeof(char) * (len + 1));
+	if (!out)
+		return (NULL);
+	ft_strlcpy(out, s1, len + 1);
+	return (out);
 }
