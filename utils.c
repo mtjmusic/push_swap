@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmusic <mmusic@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 12:24:32 by mmusic            #+#    #+#             */
-/*   Updated: 2024/09/04 17:03:46 by mmusic           ###   ########.fr       */
+/*   Created: 2024/11/19 18:13:51 by matej             #+#    #+#             */
+/*   Updated: 2024/11/19 22:58:08 by matej            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_isalpha(int c)
+void ft_lstprint(t_l *lst)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	int i = 1;
+	while(lst)
+	{
+		ft_printf("item %d\t %d\n", i, lst->content);
+		lst = lst->next;
+		i++;
+	}
 }

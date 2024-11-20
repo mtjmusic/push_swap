@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmusic <mmusic@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matej <matej@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 12:25:02 by mmusic            #+#    #+#             */
-/*   Updated: 2024/09/04 17:11:14 by mmusic           ###   ########.fr       */
+/*   Created: 2024/11/19 15:06:08 by matej             #+#    #+#             */
+/*   Updated: 2024/11/19 15:21:28 by matej            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strchr(const char *s, int c)
+int	check_args(char *argv)
 {
-	char	*out;
-	char	to_find;
+	char *temp;
 
-	to_find = (unsigned char)c;
-	out = (char *)s;
-	while (*out)
+	temp = argv;
+	while(*temp)
 	{
-		if (*out == to_find)
-			return (out);
-		out++;
+		while(*temp && ft_isspace(*temp))
+			temp++;
+		if(*temp && !ft_isdigit(*temp))
+			return (0);
+		while(*temp && ft_isdigit(*temp))
+			temp++;
 	}
-	if (*out == to_find)
-		return (out);
-	return (NULL);
+	return (1);
 }

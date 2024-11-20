@@ -8,8 +8,8 @@
             "name": "Launch GDB Debugger",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/a",
-            "args": [],
+            "program": "${workspaceFolder}/push_swap",
+            "args": ["1 2 3 4 5 6"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [
